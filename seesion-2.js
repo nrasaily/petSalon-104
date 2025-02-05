@@ -14,7 +14,8 @@ let student1 = new Student("Leo","lmiranda@sdgku.edu",80);
 
 console.log(student1);
 
-let student2 = new student1("Pam","pam@gmail.com",80)
+let student2 = new Student("Pam","pam@gmail.com",80)
 console.log(student2);
 
-let student3 = new student1("Nar", "nar@gmial", 30)
+let student3 = new Student("Nar", "nar@gmial", 30)
+console.log(student3);

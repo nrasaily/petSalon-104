@@ -1,37 +1,60 @@
+let petList=[]; // empty array
+
 let petSalon = {
     name: "The fashion Pet",
     address:{
         street: "Palm Ave",
-        zip: "22200"
+        zip: "22100"
     }
 }
 
-let pet1={
-    name: "Scooby",
-    age: 66,
-    gender: "male",
-}
-let pet2={
-    name: "Scrapy",
-    age: 99,
-    gender: "male"
-}
-let pet3={
-    name:"Suri",
-    age: 77,
-    gender: "male",
-}
+//getting html element
+let inputName=document.getElementById("txtName")
+let inputAge=document.getElementById("txtAge")
+let inputGender=document.getElementById("txtGender")
+let inputBreed=document.getElementById("txtBreed")
+let inputService=document.getElementById("txtService")
+let inputType=document.getElementById("txtType")
 
-let petList = [pet1, pet2, pet3];
-
-document.getElementById("petCounter").innerHTML = `we have ${petList.length} pets`;
-function getPetName(){
-    let list = document.getElementById("petNames");
-    for(let i=0; i<petList.length; i++){
-        console.log(petList[i].name);
-        list.innerHTML+= `<li>${petList[i].name}</li>`
-    }
+// constructor 
+// name age gender breed service type
+function Pet(name,age,gender,breed,service,type){
+    this.name=name;
+    this.age=age;
+    this.gender=gender;
+    this.breed=breed;
+    this.service=service;
+    this.type=type;
 }
 
-getPetName();
+function register(){
+    // get the value from input
+    
+    //create object using constructor
+    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputType.value)
+    console.log(newPet);
 
+    //push the object into the array
+    petList.push(newPet);
+    clearInputs();
+}
+function clearInputs(){
+    inputName.value="";
+    inputAge.value="";
+    inputGender.value="";
+    inputBreed.value="";
+    inputService.value="";
+    inputType.value="";
+}
+function init(){
+// create 3 pets
+let pet1 = new Pet ("Scooby",65,"Male","dane");
+let pet2 = new Pet ("Scrappy",55,"Male","Mixed")
+let pet3 = new Pet ("Holy", 12, "Mixed")
+//push the pets into the array
+
+petList.push(pet1, pet2, pet3);
+
+}
+
+window.onload=init;// wait to render HTML

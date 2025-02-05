@@ -113,7 +113,7 @@ let studentList = [student1, student2, student3, student4];
 
 console.log("student list: ", studentList.lenght);
 
-document.getElementById("studentsCounter").innerHTML =`We have ${studentList.length} students`;
+document.getElementById("studentCounter").innerHTML =`We have ${studentList.length} students`;
 
 console.log(`Email: ${studentList[1].email}, address: ${studentList[1].address}`);
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./register.css">
+    <title>Document</title>
+</head>
+<body> 
+    <header>
+        <div class="menu-bar">
+            <h1>The Fashion Pet</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="Service.html">Services</a>
+                <a href="register.html">Register</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+    <div>
+        <h2>Register a new pet</h2>
+        <div class="form-container">
+            <div class="form-control">
+                <label>Name:</label>
+                <input type="text" id="txtName">
+            </div>
+            <div class="form-control">
+                <label>Age:</label>
+                <input type="number" id="txtAge">
+            </div>
+            <div class="form-control">
+                <label>Gender:</label>
+                <input type="text" id="txtGender">
+            </div>
+            <div class="form-control">
+                <label>Breed:</label>
+                <input type="text" id="txtBreed">
+            </div>
+            <div class="form-control">
+                <label>Service:</label>
+                <select name="type" id="txtService">
+                    <option value="guide">Guide</option>
+                    <option value="guard">Guard</option>
+                    <option value="hearing">Hearing</option>
+                    <option value="psychiatric Service">Psychiatric Service</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="type"> Choose a Type:</label>
+                <select name="type" id="txtType">
+                    <option value="cat">Cats</option>
+                    <option value="dog">Dogs</option>
+                    <option value="bird">Birds</option>
+                    <option value="horse">Horses</option>
+                </select>
+            </div>
+
+            <div>
+                <button onclick="register()">Register</button>
+            </div>
+        </div>
+    </div>
+</main>
+<section>
+    <h2>Registred Pets</h2>
+    <p id="petsCounter"></p>
+    <div id="petNames"></div>
+</section>
+
+<script src="./script.js"></script>
+</body>
+</html>
