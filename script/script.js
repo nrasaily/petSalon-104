@@ -54,7 +54,7 @@ let pet3 = new Pet ("Holy", 12, "Mixed")
 //push the pets into the array
 
 petList.push(pet1, pet2, pet3);
-
+console.log(petList)
 }
 
 window.onload=init;// wait to render HTML

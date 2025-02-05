@@ -121,6 +121,8 @@ function getStudentName(){
     let list = document.getElementById("studentNames");
     for(let i=0; i<studentList.lenghth; i++){
         console.log(studentList[i].name);
+
+        
     }
 }
 getStudentName();
