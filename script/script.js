@@ -35,9 +35,41 @@ function register(){
     console.log(newPet);
 
     //push the object into the array
-    petList.push(newPet);
-    clearInputs();
+    if(isValid(newPet)){
+        petList.push(newPet);
+        displayTable();
+        clearInputs();
+    }
+    
 }
+
+function isValid(pet){
+    let validation = true;
+    if(pet.name===""){
+        validation = false;
+        alert("The name of the pet should not be empty");
+    }
+    if(pet.age==""){
+        alert("The age of the pet should not be Empty");
+    }
+
+    if(pet.gender==""){
+        alert(" should not be empty")
+
+    }
+    if(pet.breed==""){
+    }
+    if(pet.service==""){
+        alert("should not be empty")
+        
+    }
+    if(pet.type==""){
+        
+        alert("should not be empty")
+    }
+    return validation;
+}
+
 function clearInputs(){
     inputName.value="";
     inputAge.value="";
@@ -48,13 +80,14 @@ function clearInputs(){
 }
 function init(){
 // create 3 pets
-let pet1 = new Pet ("Scooby",65,"Male","dane");
-let pet2 = new Pet ("Scrappy",55,"Male","Mixed")
-let pet3 = new Pet ("Holy", 12, "Mixed")
+let pet1 = new Pet ("Scooby",65,"Male","dane", "mixed", "grooming", "dog");
+let pet2 = new Pet ("Scrappy",55,"Male","Mixed", "hon", "cleaning", "dog")
+let pet3 = new Pet ("Holy", 12, "male", "Mixed", "Nails", "cat")
 //push the pets into the array
 
 petList.push(pet1, pet2, pet3);
-console.log(petList)
+displayTable();
+
 }
 
 window.onload=init;// wait to render HTML
