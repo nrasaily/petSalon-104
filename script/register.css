@@ -5,12 +5,14 @@ body{
 }
 main{
     background-color: azure;
-    margin: 100px;
+    padding: 10px;
     border: 1px solid brown;
     border-radius: 10px;
     padding-bottom: 50px;
 }
-.form-control{
-    margin: 20px;
-    
+
+
+.error{
+    color: rgb(251, 174,174);
+    border:1px solid red
 }

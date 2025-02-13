@@ -20,6 +20,10 @@ function displayPet(){
     cardSection.innerHTML = result;
 }
 
+function displayPetInfo(){
+    document.getElementById("petsCounter").innerHTML="Total pets = " + petList.length;
+}
+
 function displayTable(){
     let petRows = document.getElementById("petRows");
     let rows="";
@@ -32,7 +36,11 @@ function displayTable(){
         <td>${pet.gender}</td>
         <td>${pet.breed}</td>
         <td>${pet.service}</td>
-        <td>${pet.type}</td>
+        <td>
+            <button class="btn btn-danger btn-sm" onclick="deletePet(${i})" >Delete</button>
+            <button class="btn btn-info btn-sm disabled">Edit</button>
+        </td>
+    </tr>
     `;
     }
     petRows.innerHTML=rows;

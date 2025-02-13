@@ -38,7 +38,11 @@ function register(){
     if(isValid(newPet)){
         petList.push(newPet);
         displayTable();
+        displayPetInfo();
         clearInputs();
+        showAlert("A new pet was added", "success");
+    }else{
+        showAlert("Please, add all the information","danger");
     }
     
 }
@@ -47,25 +51,29 @@ function isValid(pet){
     let validation = true;
     if(pet.name===""){
         validation = false;
-        alert("The name of the pet should not be empty");
+        inputName.classList.add("error");
+        inputAge.classList.remove("error");
+        inputService.classList.remove("error");
     }
     if(pet.age==""){
-        alert("The age of the pet should not be Empty");
+        validation = false;
+        inputAge.classList.add("error");
     }
-
     if(pet.gender==""){
-        alert(" should not be empty")
-
+        validation = false;
+        inputGender.classList.add("error");
     }
     if(pet.breed==""){
+        validation = false;
+        inputBreed.classList.add("error");
     }
     if(pet.service==""){
-        alert("should not be empty")
-        
-    }
+        validation = false;
+        inputService.classList.add("error");
+        }
     if(pet.type==""){
-        
-        alert("should not be empty")
+        validation = false;
+        inputType.classList.add("error");
     }
     return validation;
 }
@@ -78,6 +86,32 @@ function clearInputs(){
     inputService.value="";
     inputType.value="";
 }
+
+function deletePet(petId){
+    document.getElementById(petId).remove();
+
+    petList.splice(petId,1);
+
+    displayTable();
+
+    displayPetInfo();
+
+    showAlert("The pet was deleted","warning");
+}
+
+
+function showAlert(msg,type){
+    let alertContainer = document.getElementById("alertContainer");
+    alertContainer.innerHTML`
+    <div id="alert-error" class="alert alert-${type}" role="alert">
+        ${msg}
+    </div>
+    `;
+    setTimeout(()=>{
+        document.getElementById("alert-error").remove();
+    },3000);
+}
+
 function init(){
 // create 3 pets
 let pet1 = new Pet ("Scooby",65,"Male","dane", "mixed", "grooming", "dog");
@@ -87,7 +121,7 @@ let pet3 = new Pet ("Holy", 12, "male", "Mixed", "Nails", "cat")
 
 petList.push(pet1, pet2, pet3);
 displayTable();
-
+document.getElementById("alert-error").classList.add("hide");
 }
 
-window.onload=init;// wait to render HTML
+window.onload=init;

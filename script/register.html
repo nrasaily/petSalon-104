@@ -54,8 +54,16 @@
     <main>
     <div>
         <h2>Register a new pet</h2>
-        <div class="form-container">
-            <div class="mb-3">
+
+        <div id="alertContainer">
+
+        </div>
+
+        <div id="alert-error" class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+        </div>
+
+            <div class="form-container">div class="mb-3">
                 <label>Name:</label>
                 <input class="form-control" type="text" id="txtName">
             </div>
@@ -73,7 +81,7 @@
             </div>
             <div class="mb-3">
                 <label>Services:</label>
-                <select class="form-select" id="txtService">
+                <select class="form-control" id="txtService">
                     <option value="" disabled selected>-- Select A Service --</option>
                     <option value="Grooming">Grooming</option>
                     <option value="vaccines">Vaccines</option>
@@ -82,8 +90,8 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label> Choose a Type:</label>
-                <select name="type" id="txtType">
+                <label > Choose a Type:</label>
+                <select class="form-control" name="type" id="txtType">
                     <option value=""disabled selected>-- Select a type--</option>
                     <option value="cat">Cats</option>
                     <option value="dog">Dogs</option>
@@ -93,7 +101,7 @@
             </div>
 
             <div>
-                <button class="" onclick="Register()">Register</button>
+                <button class = "btn btn-primary" onclick="register()">Register</button>
             </div>
         </div>
     </div>

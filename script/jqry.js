@@ -53,4 +53,4 @@ function register(){
 
 $("#btnRegister").on("click",register);
 
-("#btnNew").on("click",Click Me)
+("#btnNew").on("click",ClickMe)
