@@ -33,8 +33,8 @@ let blueParagraph = $("#blue").css({
 
 // Class selector
 
-    let paragrapgWithBorder = $(".with-border");
-    paragrapgWithBorder.css("border","5px solod black");
+    let paragraphWithBorder = $(".with-border");
+    paragraphWithBorder.css("border","5px solid black");
 
     paragrapgWithBorder.on("click",function(){
         console.log("clicked");
@@ -45,12 +45,19 @@ let blueParagraph = $("#blue").css({
     let paragraphs = $("p");
     paragrapghs.css("cursor","pointer");
 
-
+//simple common function
 function register(){
     let testEntry = $("#testInput").val();
     $("results").append(`<li>${testEntry}</li>`)
 }
 
+//Events
 $("#btnRegister").on("click",register);
 
-("#btnNew").on("click",ClickMe)
+//simple and common function
+function clickMe(){
+    console.log("click me");
+    
+}
+
+("#btnNew").on("click",ClickMe);

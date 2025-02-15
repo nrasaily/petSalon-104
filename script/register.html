@@ -51,7 +51,7 @@
             
         </div>
     </header>
-    <main>
+    <main class="container">
     <div>
         <h2>Register a new pet</h2>
 
@@ -60,11 +60,12 @@
         </div>
 
         <div id="alert-error" class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+            Please, all the information required!
         </div>
 
-            <div class="form-container">div class="mb-3">
-                <label>Name:</label>
+            <div class="form-container">
+                <div class="mb-3">
+                    <label>Name:</label>
                 <input class="form-control" type="text" id="txtName">
             </div>
             <div class="mb-3">
@@ -118,14 +119,41 @@
             <th>Gender</th>
             <th>Breed</th>
             <th>Service</th>
-            <th>Action</th>
+            <th>Actions</th>
         </thead> 
         <tbody id="petRows">
 
         </tbody>
         
     </table>
+    <div class="Method">
+        <h2 class="mb-4">Payment Method</h2>
+        <form class="form-control6">
+            <div >
+                <label for="cardName">Name on Card</label>
+                <input type="text" class="form-control" id="cardName" autocomplete="off" placeholder="Enter name on card" required>
+            </div>
+            <div>
+                <label for="cardNumber">Card Number</label>
+                <input type="number" class="form-control" id="cardNumber" autocomplete="off" placeholder="xxxx - xxxx - xxxx - xxxx" required>
+            </div>
+            <div>
+                <div>
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="number" class="form-control" id="expiryDate" autocomplete="off" placeholder="MM/YYYY" required>
+                </div>
+                <div >
+                    <label for="cvv">CVV</label>
+                    <input type="number" class="form-control" data-maxlength="3" id="cvv" placeholder="CVV" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Payment</button>
+        </form>
+    </div>
+    
 </section>
+
+
 
 
 

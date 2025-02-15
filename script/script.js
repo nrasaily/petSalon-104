@@ -49,13 +49,18 @@ function register(){
 
 function isValid(pet){
     let validation = true;
+
+    //reset the style
+    inputName.classList.remove("error");
+    inputAge.classList.remove("error");
+    document.getElementById("alert-error").classList.add("hide");
+
+
     if(pet.name===""){
         validation = false;
         inputName.classList.add("error");
-        inputAge.classList.remove("error");
-        inputService.classList.remove("error");
     }
-    if(pet.age==""){
+    if(pet.age===""){
         validation = false;
         inputAge.classList.add("error");
     }
@@ -88,12 +93,15 @@ function clearInputs(){
 }
 
 function deletePet(petId){
+    //remove from html
     document.getElementById(petId).remove();
 
+    //remove from the array splice()
     petList.splice(petId,1);
 
-    displayTable();
 
+    //re-display the table
+    displayTable();
     displayPetInfo();
 
     showAlert("The pet was deleted","warning");
@@ -114,14 +122,15 @@ function showAlert(msg,type){
 
 function init(){
 // create 3 pets
-let pet1 = new Pet ("Scooby",65,"Male","dane", "mixed", "grooming", "dog");
-let pet2 = new Pet ("Scrappy",55,"Male","Mixed", "hon", "cleaning", "dog")
-let pet3 = new Pet ("Holy", 12, "male", "Mixed", "Nails", "cat")
-//push the pets into the array
+    let pet1 = new Pet ("Scooby",65,"Male","dane", "mixed", "grooming", "dog");
+    let pet2 = new Pet ("Scrappy",55,"Male","Mixed", "hon", "cleaning", "dog")
+    let pet3 = new Pet ("Holy", 12, "male", "Mixed", "Nails", "cat")
+    //push the pets into the array
 
-petList.push(pet1, pet2, pet3);
-displayTable();
-document.getElementById("alert-error").classList.add("hide");
+    petList.push(pet1, pet2, pet3);
+    displayTable();
+    displayPetInfo();
+    document.getElementById("alert-error").classList.add("hide");
 }
 
 window.onload=init;

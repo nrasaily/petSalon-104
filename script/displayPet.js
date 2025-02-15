@@ -3,16 +3,17 @@ function displayPet(){
     let result ="";
 
     for(let i=0; i<petList.length; i++){
+        //console.log(petList[i]);
         let pet = petList[i];
         result += `
         <div id=${i} class="card" style="width: 18rem;">
-        
             <div class="card-body">
                 <h5 class="card-title"> Name: ${pet.name}</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">Age: ${pet.age}</h6>
                 <p class="card-text">Gender: ${pet.gender}</p>
                 <p class="card-text">Breed: ${pet.breed}</p>
-            
+                <p class="card-text">Service: ${pet.service}</p>
+                <p class="card-text">Type: ${pet.type}</p>
             </div>
         </div>
         `
@@ -36,6 +37,7 @@ function displayTable(){
         <td>${pet.gender}</td>
         <td>${pet.breed}</td>
         <td>${pet.service}</td>
+        <td>${pet.type}</td>
         <td>
             <button class="btn btn-danger btn-sm" onclick="deletePet(${i})" >Delete</button>
             <button class="btn btn-info btn-sm disabled">Edit</button>
