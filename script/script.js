@@ -120,6 +120,7 @@ function showAlert(msg,type){
     },3000);
 }
 
+
 function init(){
 // create 3 pets
     let pet1 = new Pet ("Scooby",65,"Male","dane", "mixed", "grooming", "dog");
